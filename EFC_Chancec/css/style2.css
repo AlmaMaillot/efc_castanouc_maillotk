@@ -17,23 +17,6 @@ body{
     background-color: hsl(16, 100%, 99%);
 }
 
-.banniere-autre{
-
-    color:white;
-    height: 50px;
-    background-position: center;
-    background-image:url("../img/Accueil/banniere.jpg");
-    filter: saturate(50%);
-    background-size:cover;
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    /*border-top: 3px solid coral; */
-    /*border-bottom: 3px solid coral;*/
-
-
-}
-
 /*** Menu */
 
 .navigation{
@@ -98,7 +81,7 @@ nav{
      color:white;
      height: 500px;
      background-position: center;
-     background-image:url("../img/Accueil/evolution-of-naruto.jpg");
+     background-image:url("../img/Accueil/banniere.jpg");
      filter: saturate(50%);
      background-size:cover;
      display:flex;
@@ -113,14 +96,14 @@ nav{
     color:white;
      height: 300px;
      background-position: center;
-     background-image:url("../img/Accueil/evolution-of-naruto.jpg");
+     background-image:url("../img/Accueil/banniere.jpg");
      filter: saturate(50%);
      background-size:cover;
      display:flex;
      justify-content:center;
      align-items: center;
-     border-top: 3px solid coral;
-     border-bottom: 3px solid coral;
+    /*border-top: 3px solid coral; */
+    /*border-bottom: 3px solid coral;*/
 
  }
 
