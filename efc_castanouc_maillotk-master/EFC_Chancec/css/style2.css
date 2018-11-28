@@ -1,87 +1,40 @@
-/************************************************************ Contenu principale ************************/
+/************************************************************ Contenu principale ***************************************************/
 
 body{
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin:0 auto;
     padding:0;
-    width:80%; 
+    width:80%; /* Consigne devis */
 }
 
-/*** Démo : Entête */
+footer{
+
+    /*background-image:linear-gradient(-90deg,white);*/
+    background-color: hsl(16, 100%, 97%);
+    border-top:3px solid coral;
+    text-align: right; 
+    padding: 85px; 
+  
+}
+
+/* Entête du site */
 
 .header-top{
     display: flex;
     justify-content: center;
-    align-items: center;  /* Ou padding */
+    align-items: center; 
     background-color: hsl(16, 100%, 99%);
 }
 
-/*** Menu */
-
-.navigation{
-
-    display: flex;
-    flex-flow: row nowrap;
-    list-style: none;
-    padding:0;
-    margin:0;
-    justify-content:center;
-    /*padding-right:40em;
-    padding-right:40em;*/
-    background-color: hsl(16, 100%, 35%);
-}
-
-nav{
-
-    width:100%;
-    
-}
-
-/***  */
-
-.navigation a{
-
-    padding:1em 6em;
-    background-color:none;
-    text-decoration: none;
-    display: inline-block;
-    text-align:center;
-    color: #333;
-    /*border-radius: 3px;
-    Mettre background-color et ensuite all 
-    transition: all linear 500ms;*/
-}
-
-.navigation a:hover{
-    background-color:coral;
-    color: white;
- }
- 
-
- .unselected{
-
-    background-color: hsl(16, 100%, 35%);
-    color:black;
-}
-   
-
- .selected{
-
-    background-color:coral;
-    color: white;
-
- }
-
-
- /*** Banniere */
+ /* Banniere page d'accueil */
  
  .banniere{
 
      color:white;
      height: 500px;
      background-position: center;
-     background-image:url("../img/Accueil/banniere.jpg");
+     background-image:url("../img/Accueil/banniere.jpg"); /* Consigne devis */
      filter: saturate(50%);
      background-size:cover;
      display:flex;
@@ -91,9 +44,21 @@ nav{
      border-bottom: 3px solid coral;
  }
 
+ .banniere h2{
+
+    font-family: Tahoma, sans-serif;
+    padding: 10px 15px;
+    background-color: hsl(16, 100%, 66%); /* Consigne devis */
+    opacity: 1;
+    font-size: 1.3em;
+    
+ }
+
+/* Banniere autres pages du site */
+
  .banniere-autre{
 
-    color:white;
+     color:white;
      height: 300px;
      background-position: center;
      background-image:url("../img/Accueil/banniere.jpg");
@@ -117,17 +82,50 @@ nav{
 
  }
 
+/* Menu - Barre de navigation */
 
- .banniere h2{
+nav{ width:100%; }
 
-    font-family: Tahoma, sans-serif;
-    padding: 10px 15px;
-    background-color: hsl(16, 100%, 66%); /*hsl please */
-    opacity: 1;
-    font-size: 1.3em;
+.navigation{
+
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    padding:0;
+    margin:0;
+    justify-content:center;
+    background-color: hsl(16, 100%, 35%);
+}
+
+.navigation a{
+
+    padding:1em 6em;
+    background-color:none;
+    text-decoration: none;
+    display: inline-block;
+    text-align:center;
+    color: #333;
+}
+
+.navigation a:hover{
+    
+    background-color:coral;
+    color: white;
     
  }
+ 
+/* Consignes devis: Les onglets de navigation gardent un état sélectionné sur la page courante */
 
+ .unselected{ background-color: hsl(16, 100%, 35%); color:black; }
+ .selected{ background-color:coral; color: white; }
+
+/************************************************************ Page d'accueil ********************************************************/
+
+.wrapper{
+    
+    display:flex;
+    flex-flow: column nowrap;
+}
 
 main{
 
@@ -140,10 +138,18 @@ main{
         
 }
 
+.bloc-gauche{
+
+    width:90%;
+    background-color:crimson;
+    padding-left:2.5em; 
+    padding-right:2.5em;
+    padding-bottom: 2.5em;
+}
+
 aside{
 
     justify-content: flex-end;
-    /*flex-flow:row nowrap;*/
     align-items: center; 
     margin-left:1.5em; 
     margin-right:0;
@@ -158,15 +164,6 @@ aside{
   
 }
 
-.bloc-gauche{
-
-    width:90%;
-    background-color:crimson;
-    padding-left:2.5em; 
-    padding-right:2.5em;
-    padding-bottom: 2.5em;
-}
-
 .aside-box{
 
     background-color:chocolate;
@@ -176,8 +173,6 @@ aside{
     margin-right:2.5em;
     padding-left:0.5em; 
     padding-right:2.5em;
-
-    
 }
 
 .aside-flex{
@@ -193,29 +188,12 @@ aside{
     display: inline-block;
     padding: 1em 0.5em;
  
-
 }
 
 
-footer{
 
-    /*background-image:linear-gradient(-90deg,white);*/
-    background-color: hsl(16, 100%, 97%);
-    border-top:3px solid coral;
-    text-align: right; 
-    padding: 85px; 
-  
-}
 
-.wrapper{
-
-    display:flex;
-    flex-flow: column nowrap;
-    
-
-}
-
- .canvas-flex {
+.canvas-flex {
 
     display:flex;
     flex-flow: row nowrap; 
