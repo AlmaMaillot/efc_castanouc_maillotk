@@ -151,6 +151,104 @@ btnId = e.target.id;
 
 ////////////////////////////////////////////////////// Fonctionalité Numero 03: Filtre
 
+//////////////// 1er Partie: Triage de l'information (mots clés)
+
+
+// Récupérer tous les éléments qui ont la classe "js-mot"
+
+var lexique = document.querySelectorAll(".js-mot");
+
+// Récupérer le champ du formulaire (qui va servir à filtrer les mots clés)
+
+var inputField = document.querySelector("#barre");
+
+// Ajouter un listener "keyup" » action qui a lieu quand on relâche la touche. La fonction sera lancée chaque fois qu'un caractère est rentré.
+
+inputField.addEventListener("keyup", filteringList);
+
+
+function filteringList(e){
+
+
+    var characters = inputField.value.toUpperCase();
+    
+    for(var i=0; i<lexique.length; i++){
+
+        console.log(lexique)
+    
+        var currentSearch = lexique[i].textContent.toUpperCase();
+    
+            if(currentSearch.indexOf(characters) == -1){
+    
+            lexique[i].style.display ="none";
+            
+            } else {
+    
+            lexique[i].style.display ="block";
+    
+            }
+    
+        }
+    
+    }
+
+//////////////// 2ème Partie: Changement du contenu de la page 
+
+
+//Récuperation des boutons (mots)
+
+var btnLex = document.querySelectorAll(".js-bouton");
+
+//Récuperation des divs dans lesquelles sont contenues les boutons 
+
+var btnDiv = document.querySelectorAll(".js-mot");
+
+// Récuperation des Boites pour les contenus
+var searchConteneur = document.querySelector(".zoneDerecherche");
+var lexiqueContaineur = document.querySelector(".lexique-article");
+var lexiqueTitre = document.querySelector(".lexique-titre");
+var lexiqueParaG = document.querySelector(".lexique-para");
+
+// Contenu à insérer
+
+var definition = ["Tentative criminelle contre une personne ou un lieu (surtout dans un contexte politique).", "Ensemble d'actes de violence (attentats, prises d'otages, etc.) commis par une organisation ou un individu pour créer un climat d'insécurité, pour exercer un chantage sur un gouvernement, pour satisfaire une haine à l'égard d'une communauté, d'un pays, d'un système.",
+ "Avion de ligne moyen-courrier biréacteur à fuselage étroit produit par Boeing Commercial Airplanes de 1981 à 2004. C'est le plus grand avion passagers monocouloir de cet avionneur. Prévu pour remplacer le triréacteur Boeing 727 sur des itinéraires courts et moyen-courriers, le 757 a une plus grande capacité (200 à 289 passagers) sur une distance maximale de 5 830 à 7 600 km, selon la version.", "", "", "", "", "", ""];
+
+//Contenu Titres
+var titreLexique = ["Attentat","Terroriste","Boeing","Wall street","etc."]
+
+ //Variable qui contient le bouton precedent
+ var boutonPrecedentLexique = document.querySelector("#mot-1");
+
+// Ajouter un évènement aux boutons
+
+for(var i = 0; i < btnLex.length; i++) {
+    btnLex[i].addEventListener("click", afficheContenu);
+}
+
+
+function afficheContenu(e){
+    e.preventDefault();
+
+    if (boutonPrecedentLexique){
+        boutonPrecedentLexique.classList.remove("selectedMot")
+    }
+
+    var btn = e.target;
+    btn.classList.add("selectedMot");
+    boutonPrecedentLexique = btn;
+
+    var attribut = e.target.dataset.mot;
+
+    lexiqueTitre.textContent = titreLexique[attribut];
+    lexiqueParaG.textContent = definition[attribut];
+    lexiqueContaineur.style.border = "thick solid hsl(16, 100%, 100%)";
+    btnLex.style.backgroundColor = "hsl(16, 100%, 100%);";
+ 
+}
+
+
+
 
 
 
